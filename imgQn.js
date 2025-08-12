@@ -79,11 +79,4 @@ for (let i = 0; i < 4; i++) {
   container.append(parent);
 }
 
-//checking img
-// const imageUrl = "https://example.com/image.jpg";
-// const isImageUrl =
-//   typeof imageUrl === "string" &&
-//   (imageUrl.endsWith(".jpg") ||
-//     imageUrl.endsWith(".png") ||
-//     imageUrl.endsWith(".gif"));
-// console.log(isImageUrl); // true
+
