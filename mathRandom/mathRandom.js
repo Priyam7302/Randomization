@@ -36,7 +36,7 @@ function getRandomNumber() {
   }
 }
 
-console.log(randomNum);
+// console.log(randomNum);
 
 let container = document.querySelector(".container");
 

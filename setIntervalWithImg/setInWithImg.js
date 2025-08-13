@@ -16,9 +16,9 @@ const quiz = [
     answer: "Dhaka",
     options: ["Chittagong", "Canberra", "Dhaka", "NSW"],
   },
-
   {
     question: "What is the capital of Russia?",
+    imgUrl: "dice_2.png",
     answer: "Moscow",
     options: ["Moscow", "St. Petersberg", "Paris", "Dublin"],
   },
@@ -47,15 +47,24 @@ let timing = setInterval(() => {
 
 function fn() {
   let quesNum = getRandomNumber();
-
   const parent = document.createElement("div");
   parent.classList.add("question");
   console.log(quesNum);
+
   const question = document.createElement("p");
-
   question.innerText = quiz[quesNum].question;
-
   parent.append(question);
+
+  if (
+    quiz[quesNum].imgUrl &&
+    (quiz[quesNum].imgUrl.toLowerCase().endsWith(".jpg") ||
+      quiz[quesNum].imgUrl.toLowerCase().endsWith(".png") ||
+      quiz[quesNum].imgUrl.toLowerCase().endsWith(".gif"))
+  ) {
+    const imgQn = document.createElement("img");
+    imgQn.src = quiz[quesNum].imgUrl;
+    parent.append(imgQn);
+  }
 
   const optionDiv = document.createElement("div");
   optionDiv.classList.add("options");
