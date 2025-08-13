@@ -16,14 +16,9 @@ const quiz = [
     answer: "Dhaka",
     options: ["Chittagong", "Canberra", "Dhaka", "NSW"],
   },
-
-  //   {
-  //     question: "What is the capital of Russia?",
-  //     answer: "Moscow",
-  //     options: ["Moscow", "St. Petersberg", "Paris", "Dublin"],
-  //     },
   {
-    question: "dice_2.png",
+    question: "What is the capital of Russia?",
+    imgUrl: "dice_2.png",
     answer: "Moscow",
     options: ["Moscow", "St. Petersberg", "Paris", "Dublin"],
   },
@@ -51,24 +46,25 @@ for (let i = 0; i < 4; i++) {
   parent.classList.add("question");
   console.log(quesNum);
 
+  const question = document.createElement("p");
+  question.innerText = quiz[quesNum].question;
+  parent.append(question);
+
   if (
-    quiz[quesNum].question.toLowerCase().endsWith(".jpg") ||
-    quiz[quesNum].question.toLowerCase().endsWith(".png") ||
-    quiz[quesNum].question.toLowerCase().endsWith(".gif")
+    quiz[quesNum].imgUrl &&
+    (quiz[quesNum].imgUrl.toLowerCase().endsWith(".jpg") ||
+      quiz[quesNum].imgUrl.toLowerCase().endsWith(".png") ||
+      quiz[quesNum].imgUrl.toLowerCase().endsWith(".gif"))
   ) {
     const imgQn = document.createElement("img");
-    imgQn.src = quiz[quesNum].question;
+    imgQn.src = quiz[quesNum].imgUrl;
     parent.append(imgQn);
-  } else {
-    const question = document.createElement("p");
-    question.innerText = quiz[quesNum].question;
-    parent.append(question);
   }
 
   const optionDiv = document.createElement("div");
   optionDiv.classList.add("options");
 
-  for (let j = 0; j < quiz[i].options.length; j++) {
+  for (let j = 0; j < quiz[quesNum].options.length; j++) {
     const option = document.createElement("p");
     option.classList.add("option");
     option.innerText = quiz[quesNum].options[j];
@@ -78,5 +74,3 @@ for (let i = 0; i < 4; i++) {
   parent.append(optionDiv);
   container.append(parent);
 }
-
-

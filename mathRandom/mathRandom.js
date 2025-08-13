@@ -25,7 +25,6 @@ const quiz = [
 ];
 
 let quesArr = [];
-// let randomNum = Math.floor(Math.random() * 4 + 1);
 
 function getRandomNumber() {
   let randomNum = Math.floor(Math.random() * quiz.length);
@@ -37,7 +36,7 @@ function getRandomNumber() {
   }
 }
 
-// console.log(randomNum);
+console.log(randomNum);
 
 let container = document.querySelector(".container");
 
